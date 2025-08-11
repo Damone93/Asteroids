@@ -36,6 +36,15 @@ class Player(CircleShape):
         if keys[pygame.K_SPACE]:
             self.shoot()
 
+        if self.position.x < 0:
+            self.position.x = 0
+        if self.position.x > 1280:
+            self.position.x = 1280
+        if self.position.y < 0:
+            self.position.y = 0
+        if self.position.y > 720:
+            self.position.y = 720
+
     def shoot(self):
         if self.shoot_timer > 0:
             return
